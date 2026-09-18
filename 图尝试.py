@@ -16,7 +16,7 @@ def predict_ucs(dosage, water_content, plasticity_index):
 
 
 # --- UI 界面设计 ---
-st.title("🏗️ CDUT 渣土泥浆智能智配系统")
+st.title("🏗️ MEGA 渣土泥浆智能智配系统")
 st.markdown("---")
 
 # 第一部分：输入端
