@@ -2,12 +2,12 @@ import streamlit as st
 import numpy as np
 
 # 设置页面配置
-st.set_page_config(page_title="CDUT 渣土泥浆智能智配系统", layout="centered")
+st.set_page_config(page_title="MEGA 渣土泥浆智能智配系统", layout="centered")
 
 
 # --- 模拟底层模型算法 ---
 def predict_ucs(dosage, water_content, plasticity_index):
-    # 模拟补偿算法逻辑：基础强度 = 0.82 * 掺量 + 0.96 (参考你的CDUT 2代拟合公式)
+    # 模拟补偿算法逻辑：基础强度 = 0.82 * 掺量 + 0.96 (参考你的MEGA 2代拟合公式)
     # 加入渣土性质调节因子 (含水率和塑性指数会负向影响强度)
     adjustment = (40 - water_content) * 0.05 + (25 - plasticity_index) * 0.02
     base_strength = 0.82 * dosage + 0.96
@@ -52,7 +52,7 @@ if st.button("开始秒级生成配比方案"):
         st.write("满足流态固化土回填标准，实现渣土原位消纳。")
     else:
         st.warning("⚠️ 建议方向：**低要求场地平整 / 矿坑修复**")
-        st.write("强度较低，建议增加 CDUT 固化剂掺量或复配激发剂。")
+        st.write("强度较低，建议增加 MEGA 固化剂掺量或复配激发剂。")
 
     # 第五部分：低碳评估 [cite: 3]
     st.subheader("4. 环境效益评估")
@@ -63,6 +63,6 @@ if st.button("开始秒级生成配比方案"):
 st.sidebar.title("技术支撑")
 st.sidebar.info("""
 - **模型库**：500+组实验数据 
-- **核心材料**：CDUT 复合固化剂 [cite: 1]
+- **核心材料**：MEGA 复合固化剂 [cite: 1]
 - **预测精度**：R² 分布在 0.88-0.93 之间 
 """)
